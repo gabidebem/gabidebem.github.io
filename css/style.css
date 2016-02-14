@@ -27,24 +27,48 @@ a:hover, a:active:focus {
     background: #90b2cb;
 }
 
+.light-blue-font {
+    color: #90b2cb;
+}
+
 .medium-blue {
     background: #809bae;
+}
+
+.medium-blue-font {
+    color: #809bae;
 }
 
 .dark-blue {
     background: #697a8a;
 }
 
+.dark-blue-font {
+    color: #697a8a;
+}
+
 .dark-purple {
     background: #898190;
+}
+
+.dark-purple-font {
+    color: #898190;
 }
 
 .light-purple {
     background: #b68ea6;
 }
 
+.light-purple-font {
+    color: #b68ea6;
+}
+
 .light-pink {
     background: #da9bb6;
+}
+
+.light-pink-font {
+    color: #da9bb6;
 }
 
 footer span.fa-heart {
@@ -85,6 +109,20 @@ footer span.fa-heart {
     animation-iteration-count: infinite;
     -webkit-animation-timing-function: linear;
     animation-timing-function: linear;
+}
+
+.mobile-box {
+    font: 1em/180% Raleway, Helvetica, sans-serif;
+    text-align: justify;
+}
+
+.pills {
+    padding: 3px 15px;
+    border-radius: 0 4px 4px 0;
+}
+
+.mobile-box i {
+    margin-left: 3px;
 }
 
 /*Overlay de pontos sobre a imagem*/
@@ -312,22 +350,6 @@ footer span.fa-heart {
     text-transform: uppercase;
 }
 
-#about .first-row .personal, #about .first-row .details {
-    color: #90b2cb;
-}
-
-#about .second-row .personal, #about .second-row .skills {
-    color: #898190   
-}
-
-#about .third-row .skills, #about .third-row .technical {
-    color: #b68ea6;
-}
-
-#about .third-row .media, #about .third-row .social {
-    color: #da9bb6
-}
-
 #about .text-box {
     font-weight: 400;
     display: block;
@@ -338,10 +360,6 @@ footer span.fa-heart {
 
 #about .third-row .text-box, #about .third-row .left-box {
     margin-top: -5px;
-}
-
-#about .employment, .history {
-    color: #809bae;
 }
 
 #about .personal {
@@ -374,7 +392,6 @@ footer span.fa-heart {
 
 #about .education {
     font-size: 77px;
-    color: #697a8a;
 }
 
 #about .technical {
@@ -565,9 +582,13 @@ footer span.fa-heart {
     margin: 0 2px;
 }
 
-@media (max-width:768px){
+@media (max-width:880px){
+    
+    #about {
+        padding-top: 50px;
+    }
     #about .about, #works .works {
-        font: bold 3em/70% Raleway, Helvetica, sans-serif;
+        font: bold 3em/90% Raleway, Helvetica, sans-serif;
     }
 
     #contact a {
@@ -578,7 +599,7 @@ footer span.fa-heart {
         display: none;
     }
 
-    #welcome h1, #about .employment {
+    #welcome h1{
         font-size: 50px;
     }
 
@@ -590,11 +611,33 @@ footer span.fa-heart {
         font-size: 16px;
     }
 
+    #about:before {
+        display: none;
+    }
+
     #contact .copyright {
         font-size: 12px;
     }
 
     #solutions .title, #solutions .round {
         font-size: 14px;
+    }
+
+    #solutions .col-md-4 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #about .text-box {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    #about .history {
+        margin-top: 10px;
+    }
+
+    #about .skills, #about .media {
+        margin-top: 0;
     }
 }
