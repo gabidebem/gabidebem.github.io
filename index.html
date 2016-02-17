@@ -61,29 +61,24 @@
         });
       </script>
       <script type="text/javascript">
-        $(function() {
-          $('nav a').bind('click',function(event){
-            var $anchor = $(this);
-
-            $('a').each(function () {
-              $(this).removeClass('active');
-            })
-            $(this).addClass('active');
-            $('html, body').stop().animate({
-              scrollTop: $($anchor.attr('href')).offset().top-80
-            }, 1500,'easeInOutExpo');
-                                        
-            event.preventDefault();
-          });
-        });
+        
+        var ctlscroll = false;
 
         $(document).ready(function () {
+          $(window).scroll(function(){
+              if(ctlscroll) {
+                console.log("ligando scroll");
+                $(document).on("scroll", onScroll);  
+              }
+            });
+
           $(document).on("scroll", onScroll);
                                  
           //smoothscroll
           $('a[href^="#"]').on('click', function (e) {
-
             e.preventDefault();
+
+            ctlscroll = false;
             
             $(document).off("scroll");
             var $anchor = $(this);
@@ -105,13 +100,14 @@
 
               });
 
-              $('html, body').stop().animate({
+              $('body').stop().animate({
                 scrollTop: $($anchor.attr('href')).offset().top
-              }, 1500,'easeInOutExpo');
+              }, 1500,'easeInOutExpo', function() {
+                    ctlscroll = true;
+                  
+              });
 
           }
-
-            $(document).on("scroll", onScroll);
                               
           });
         });
